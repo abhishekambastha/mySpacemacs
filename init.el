@@ -89,9 +89,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
-                               :weight normal
+   dotspacemacs-default-font '("Menlo"
+                               :size 14
+                               :weight thin
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -186,6 +186,7 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+   dotspacemacs-configuration-layers '(osx)
    ))
 
 (defun dotspacemacs/user-init ()
@@ -198,7 +199,33 @@ user code."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;;Themes
+  (add-to-list 'custom-theme-load-path "/Users/abhi/.spacemacs.d")
+  (load-theme 'sunburst t)
+
+  ;;linum mode and fringe
+
+  (fringe-mode 0)
+  (global-hl-line-mode -1)
+  (global-linum-mode 1)
+  (setq linum-format "%4d ")
+  (set-face-attribute 'linum nil :background "#000" )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(widget-button ((t (:weight thin)))))
