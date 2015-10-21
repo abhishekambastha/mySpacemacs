@@ -23,9 +23,10 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
+     auto-completion
+     better-defaults
      emacs-lisp
+     python
      ;; git
      ;; markdown
      ;; org
@@ -89,11 +90,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Menlo"
-                               :size 14
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 16
                                :weight thin
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 0.4)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -193,6 +194,8 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+ (add-to-list 'default-frame-alist '(width . 140)) ; character
+ (add-to-list 'default-frame-alist '(height . 100)) ; lines
   )
 
 (defun dotspacemacs/user-config ()
@@ -201,7 +204,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
   ;;Themes
-  (add-to-list 'custom-theme-load-path "/Users/abhi/.spacemacs.d")
+  (add-to-list 'custom-theme-load-path "~/.spacemacs.d")
   (load-theme 'sunburst t)
 
   ;;linum mode and fringe
@@ -210,7 +213,7 @@ layers configuration. You are free to put any user code."
   (global-hl-line-mode -1)
   (global-linum-mode 1)
   (setq linum-format "%4d ")
-  (set-face-attribute 'linum nil :background "#000" )
+  (set-face-attribute 'linum nil :background "#000" :foreground "#aaa" )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
