@@ -27,6 +27,9 @@ values."
      better-defaults
      emacs-lisp
      python
+
+     (c-c++ :variables
+           c-c++-default-mode-for-headers 'c++-mode)
      ;; git
      ;; markdown
      ;; org
@@ -196,7 +199,10 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
  (add-to-list 'default-frame-alist '(width . 140)) ; character
  (add-to-list 'default-frame-alist '(height . 100)) ; lines
+ (setq-default tmtxt/macos-default-terminal-app-path "/Applications/Utilities/Terminal.app")
+
   )
+
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
