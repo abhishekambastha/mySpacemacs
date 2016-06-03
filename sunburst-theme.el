@@ -70,7 +70,7 @@
  '(mode-line ((t (:background "#e6e5e4" :foreground "black"))))
  '(primary-selection ((t (:background "#222"))))
  '(region ((t (:background "#4a410d"))))
- '(text-cursor ((t (:background "yellow" :foreground "black"))))
+ '(text-cursor ((t (:background "red" :foreground "black"))))
  '(underline ((nil (:underline nil))))
 )
 

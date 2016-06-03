@@ -30,6 +30,8 @@ values."
 
      (c-c++ :variables
            c-c++-default-mode-for-headers 'c++-mode)
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      ;; git
      ;; markdown
      ;; org
@@ -37,7 +39,7 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -218,7 +220,7 @@ layers configuration. You are free to put any user code."
   (fringe-mode 0)
   (global-hl-line-mode -1)
   (global-linum-mode 1)
-  (setq linum-format "%4d ")
+  (setq linum-format "%4d | \s")
   (set-face-attribute 'linum nil :background "#000" :foreground "#aaa" )
   )
 
@@ -231,10 +233,13 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(widget-button ((t (:weight thin)))))
